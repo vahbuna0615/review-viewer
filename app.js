@@ -45,13 +45,13 @@ const randBtn = document.querySelector('.random-btn');
 let count = 0;
 
 // load initial item
-window.addEventListener('DOMContentLoaded', function(){
+window.addEventListener('DOMContentLoaded', () => {
   showPerson();
 });
 
 //show person based on item
 
-function showPerson(){
+const showPerson = () => {
   const item = reviews[count];
   img.src = item.img;
   author.textContent = item.name;
@@ -61,7 +61,7 @@ function showPerson(){
 
 //show next person
 
-nextBtn.addEventListener('click', function(){
+nextBtn.addEventListener('click', () => {
   count++;
   if (count > reviews.length - 1){
     count = 0;
@@ -71,7 +71,7 @@ nextBtn.addEventListener('click', function(){
 
 //show prev person
 
-prevBtn.addEventListener('click', function(){
+prevBtn.addEventListener('click', () => {
   count--;
   if (count < 0){
     count = reviews.length - 1 ;
@@ -81,7 +81,7 @@ prevBtn.addEventListener('click', function(){
 
 //show random person
 
-randBtn.addEventListener('click', function(){
+randBtn.addEventListener('click', () => {
   count = Math.floor(Math.random() * reviews.length);
   showPerson();
 })
